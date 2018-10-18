@@ -1,7 +1,7 @@
 $(document).ready(initializeApp);
 
 function initializeApp() {
-    console.log("Chat started");
+    console.log("Chat started"); 
     var socket = io();
     $('form').submit(function () {
         socket.emit('chat message', $('#m').val());
