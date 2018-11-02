@@ -4,7 +4,10 @@ function initializeApp() {
     console.log("Chat started"); 
     var socket = io();
     $('.submitMsgBtn').click(function () {
-        socket.emit('chat message', $('#m').val());
+        const userMsg = $('#m').val();
+        if (userMsg !== "") {
+            socket.emit('chat message', $('#m').val());
+        };
         $('#m').val('');
         return false;
     });

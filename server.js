@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var users = [];
+
 app.use("/", express.static(__dirname + "/"));
 
 app.get('/', function (req, res) {
